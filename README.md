@@ -57,6 +57,13 @@ uv run marimo edit *******.py
 ```
 
 ---
+
+[Marimo README_Japanese](https://github.com/marimo-team/marimo/blob/main/README_Japanese.md)
+
+
+[molab](https://molab.marimo.io/notebooks)
+
+---
 ライセンス
 
 MIT License
