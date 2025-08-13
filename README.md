@@ -81,3 +81,12 @@ v0.1.0
 - starter kit （user_guide.py）ほか
 ---
 
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="50" viewBox="0 0 200 50">
+  <a href="https://github.com/watanabe3tipapa/marimo-sandbox" target="_blank">
+    <rect width="200" height="50" rx="10" fill="#24292e"/>
+    <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="20" font-family="Arial">GitHub Repository</text>
+  </a>
+</svg>
+
+
+---
