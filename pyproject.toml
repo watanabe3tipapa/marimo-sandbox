@@ -2,6 +2,8 @@
 name = "marimo-sandbox"
 version = "0.1.0"
 description = "This is a sample project using Marimo."
+author = "Your Name"
+license = "MIT"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
