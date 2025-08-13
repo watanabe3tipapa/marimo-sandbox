@@ -58,8 +58,11 @@ uv run marimo edit *******.py
 
 ---
 
+### 📓 marimo を学ぶ
+
 [Marimo README_Japanese](https://github.com/marimo-team/marimo/blob/main/README_Japanese.md)
 
+### ⌨️ marimo をここでも使えます
 
 [molab](https://molab.marimo.io/notebooks)
 
@@ -78,7 +81,8 @@ v0.1.0
 
 - 初期リリース
 - marimo の紹介
-- starter kit （user_guide.py）ほか
+- starter kit （user_guide.py）
+- pyproject.toml
 
 ---
 
