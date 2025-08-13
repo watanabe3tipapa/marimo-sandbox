@@ -58,8 +58,11 @@ uv run marimo edit *******.py
 
 ---
 
+### 📓 marimo を学ぶ
+
 [Marimo README_Japanese](https://github.com/marimo-team/marimo/blob/main/README_Japanese.md)
 
+### ⌨️ marimo はここでも使えます
 
 [molab](https://molab.marimo.io/notebooks)
 
@@ -78,7 +81,19 @@ v0.1.0
 
 - 初期リリース
 - marimo の紹介
-- starter kit （user_guide.py）ほか
+- starter kit （user_guide.py）
+- pyproject.toml
+
+---
+
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="50" viewBox="0 0 200 50">
+  <a href="https://github.com/watanabe3tipapa/marimo-sandbox" target="_blank">
+    <rect width="200" height="50" rx="10" fill="#24292e"/>
+    <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" fill="#ffffff" font-size="20" font-family="Arial">GitHub Repository</text>
+  </a>
+</svg>
+
+
 ---
 
 <svg xmlns="http://www.w3.org/2000/svg" width="200" height="50" viewBox="0 0 200 50">
