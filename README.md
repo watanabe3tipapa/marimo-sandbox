@@ -62,7 +62,7 @@ uv run marimo edit *******.py
 
 [Marimo README_Japanese](https://github.com/marimo-team/marimo/blob/main/README_Japanese.md)
 
-### ⌨️ marimo をここでも使えます
+### ⌨️ marimo はここでも使えます
 
 [molab](https://molab.marimo.io/notebooks)
 
