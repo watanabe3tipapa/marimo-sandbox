@@ -7,4 +7,5 @@ requires-python = ">=3.13"
 dependencies = [
     "google-genai>=1.29.0",
     "marimo>=0.14.17",
+    "python-dotenv>=1.1.1",
 ]
