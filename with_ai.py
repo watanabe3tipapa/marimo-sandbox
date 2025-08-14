@@ -19,7 +19,8 @@ def _():
 def _(mo):
     mo.md(
         r"""
-    # With AI
+    # With AI　（自由帳）
+
 
 
     ```
@@ -117,6 +118,11 @@ def _():
 
     # Return the map object to display it in marimo
     blank_map
+    return
+
+
+@app.cell
+def _():
     return
 
 
