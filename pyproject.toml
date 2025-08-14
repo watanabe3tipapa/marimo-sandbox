@@ -7,9 +7,12 @@ license = "MIT"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "beautifulsoup4>=4.13.4",
     "folium>=0.20.0",
+    "geopandas>=1.1.1",
     "google-genai>=1.29.0",
     "langextract>=1.0.6",
+    "lxml>=6.0.0",
     "marimo>=0.14.17",
     "matplotlib>=3.10.5",
     "pandas>=2.3.1",

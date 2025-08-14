@@ -23,12 +23,7 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
-    #PEACH.py（自由帳）
-
-    """
-    )
+    mo.md(r"""#PEACH.py（自由帳）""")
     return
 
 
@@ -99,7 +94,44 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
+    mo.md(r"""---""")
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
     mo.md(r""" """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""### geopandas""")
+    return
+
+
+@app.cell
+def _():
+    import geopandas as gpd
+    from shapely.geometry import Point, Polygon
+
+    # GeoDataFrameの作成例
+    data = {
+        'city': ['Tokyo', 'Osaka', 'Kyoto'],
+        'population': [14000000, 2700000, 1500000],
+        'geometry': [
+            Point(139.6917, 35.6895), # 東京
+            Point(135.5022, 34.6937), # 大阪
+            Point(135.7681, 35.0116)  # 京都
+        ]
+    }
+    gdf = gpd.GeoDataFrame(data, crs="EPSG:4326") # 緯度経度を表すCRS
+
+    # GeoDataFrameを表示
+    print(gdf)
+
+    # 地図をプロット（matplotlibが必要）
+    # gdf.plot()
     return
 
 

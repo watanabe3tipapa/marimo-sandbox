@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/favicon.ico" />
+    <!-- Preload is necessary because we show these images when we disconnect from the server,
+    but at that point we cannot load these images from the server -->
+    <link rel="preload" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/assets/gradient-yHQUC_QB.png" as="image" />
+    <link rel="preload" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/assets/noise-60BoTA8O.png" as="image" />
+    <!-- Preload the fonts -->
+    <link rel="preload" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/assets/Lora-VariableFont_wght-B2ootaw-.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/assets/PTSans-Regular-CxL0S8W7.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/assets/PTSans-Bold-D9fedIX3.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/assets/FiraMono-Regular-BTCkDNvf.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/assets/FiraMono-Medium-DU3aDxX5.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/assets/FiraMono-Bold-CLVRCuM9.ttf" as="font" crossorigin="anonymous" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="a marimo app" />
+    <link rel="apple-touch-icon" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/apple-touch-icon.png" />
+    <link rel="manifest" crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/manifest.json" />
+
+    <script data-marimo="true">
+      function __resizeIframe(obj) {
+        var scrollbarHeight = 20; // Max between windows, mac, and linux
+
+        function setHeight() {
+          var element = obj.contentWindow.document.documentElement;
+          // If there is no vertical scrollbar, we don't need to resize the iframe
+          if (element.scrollHeight === element.clientHeight) {
+            return;
+          }
+
+          // Create a new height that includes the scrollbar height if it's visible
+          var hasHorizontalScrollbar = element.scrollWidth > element.clientWidth;
+          var newHeight = element.scrollHeight + (hasHorizontalScrollbar ? scrollbarHeight : 0);
+
+          // Only update the height if it's different from the current height
+          if (obj.style.height !== `${newHeight}px`) {
+            obj.style.height = `${newHeight}px`;
+          }
+        }
+
+        // Resize the iframe to the height of the content and bottom scrollbar height
+        setHeight();
+
+        // Resize the iframe when the content changes
+        const resizeObserver = new ResizeObserver((entries) => {
+          setHeight();
+        });
+        resizeObserver.observe(obj.contentWindow.document.body);
+      }
+    </script>
+    <marimo-filename hidden>news_scraper.py</marimo-filename>
+    <!-- TODO(Trevor): Legacy, required by VS Code plugin. Remove when plugin is updated (see marimo/server/_templates/template.py) -->
+    <marimo-version data-version="{{ version }}" hidden></marimo-version>
+    <marimo-user-config data-config="{{ user_config }}" hidden></marimo-user-config>
+    <marimo-server-token data-token="{{ server_token }}" hidden></marimo-server-token>
+    <!-- /TODO -->
+    <title>news scraper</title>
+    <script type="module" crossorigin crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/assets/index-CPVCa2dz.js"></script>
+    <link rel="stylesheet" crossorigin crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/@marimo-team/frontend@0.14.17/dist/assets/index-BlxPam9h.css">
+  
+<script data-marimo="true">
+    window.__MARIMO_STATIC__ = {};
+    window.__MARIMO_STATIC__.files = {};
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <!-- This is a portal for the data editor to render in -->
+    <div id="portal" data-testid="glide-portal" style="position: fixed; left: 0; top: 0; z-index: 9999"></div>
+    <script data-marimo="true">
+      window.__MARIMO_MOUNT_CONFIG__ = {
+            "filename": "news_scraper.py",
+            "mode": "read",
+            "version": "0.14.17",
+            "serverToken": "static",
+            "config": {"completion": {"activate_on_typing": true, "copilot": false}, "display": {"cell_output": "above", "code_editor_font_size": 14, "dataframes": "rich", "default_table_max_columns": 50, "default_table_page_size": 10, "default_width": "full", "reference_highlighting": false, "theme": "light"}, "formatting": {"line_length": 79}, "keymap": {"overrides": {}, "preset": "default"}, "language_servers": {"pylsp": {"enable_flake8": false, "enable_mypy": true, "enable_pydocstyle": false, "enable_pyflakes": false, "enable_pylint": false, "enable_ruff": true, "enabled": true}}, "package_management": {"manager": "uv"}, "runtime": {"auto_instantiate": true, "auto_reload": "off", "default_sql_output": "auto", "on_cell_change": "autorun", "output_max_bytes": 8000000, "reactive_tests": true, "std_stream_max_bytes": 1000000, "watcher_on_save": "lazy"}, "save": {"autosave": "after_delay", "autosave_delay": 1000, "format_on_save": false}, "server": {"browser": "default", "follow_symlink": false}, "snippets": {"custom_paths": [], "include_default_snippets": true}},
+            "configOverrides": {},
+            "appConfig": {"sql_output": "auto", "width": "full"},
+            "view": {"showAppCode": true},
+            "notebook": {"cells": [{"code": "", "code_hash": null, "config": {"column": null, "disabled": false, "hide_code": false}, "id": "Hbol", "name": "_"}, {"code": "import requests\nfrom bs4 import BeautifulSoup\nimport json\nfrom datetime import datetime\n\nclass GoogleNewsScraper:\n    def __init__(self):\n        self.base_url = \"https://news.google.com/rss\"\n        self.headers = {\n            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'\n        }\n\n    def get_news(self, country='JP', language='ja', max_results=10):\n        \"\"\"\n        \u30cb\u30e5\u30fc\u30b9\u3092\u53d6\u5f97\u3059\u308b\n        :param country: \u56fd\u30b3\u30fc\u30c9\uff08\u4f8b\uff1aJP\uff09\n        :param language: \u8a00\u8a9e\u30b3\u30fc\u30c9\uff08\u4f8b\uff1aja\uff09\n        :param max_results: \u53d6\u5f97\u3059\u308b\u30cb\u30e5\u30fc\u30b9\u6570\n        :return: \u30cb\u30e5\u30fc\u30b9\u8a18\u4e8b\u306e\u30ea\u30b9\u30c8\n        \"\"\"\n        url = f\"{self.base_url}?hl={language}&gl={country}&ceid={country}:{language}\"\n        \n        try:\n            response = requests.get(url, headers=self.headers)\n            response.raise_for_status()\n            \n            soup = BeautifulSoup(response.content, 'xml')\n            items = soup.find_all('item', limit=max_results)\n            \n            news_list = []\n            for item in items:\n                news = {\n                    'title': item.title.text,\n                    'link': item.link.text,\n                    'published_date': item.pubDate.text,\n                    'source': item.source.text if item.source else None,\n                    'description': item.description.text if item.description else None\n                }\n                news_list.append(news)\n                \n            return news_list\n            \n        except Exception as e:\n            print(f\"\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3057\u307e\u3057\u305f: {str(e)}\")\n            return []\n\ndef save_news_to_file(news_list, filename):\n    \"\"\"\n    \u30cb\u30e5\u30fc\u30b9\u3092JSON\u30d5\u30a1\u30a4\u30eb\u306b\u4fdd\u5b58\u3059\u308b\n    \"\"\"\n    with open(filename, 'w', encoding='utf-8') as f:\n        json.dump(news_list, f, ensure_ascii=False, indent=2)\n\nif __name__ == \"__main__\":\n    scraper = GoogleNewsScraper()\n    \n    # \u65e5\u672c\u306e\u30cb\u30e5\u30fc\u30b9\u3092\u53d6\u5f97\n    news = scraper.get_news(country='JP', language='ja', max_results=10)\n    \n    # \u7d50\u679c\u3092\u8868\u793a\n    for i, article in enumerate(news, 1):\n        print(f\"\\n\u8a18\u4e8b {i}:\")\n        print(f\"\u30bf\u30a4\u30c8\u30eb: {article['title']}\")\n        print(f\"\u30ea\u30f3\u30af: {article['link']}\")\n        print(f\"\u516c\u958b\u65e5: {article['published_date']}\")\n        print(f\"\u30bd\u30fc\u30b9: {article['source']}\")\n        \n    # \u7d50\u679c\u3092JSON\u30d5\u30a1\u30a4\u30eb\u306b\u4fdd\u5b58\n    current_time = datetime.now().strftime(\"%Y%m%d_%H%M%S\")\n    save_news_to_file(news, f'news_{current_time}.json') ", "code_hash": "d19fd6b3e47db7fab0e5d9167448fcc2", "config": {"column": null, "disabled": false, "hide_code": false}, "id": "jeIU", "name": "_"}], "metadata": {"marimo_version": "0.14.17"}, "version": "1"},
+            "session": {"cells": [{"code_hash": null, "console": [], "id": "Hbol", "outputs": [{"data": {"text/plain": ""}, "type": "data"}]}, {"code_hash": "d19fd6b3e47db7fab0e5d9167448fcc2", "console": [{"name": "stdout", "text": "\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3057\u307e\u3057\u305f: Couldn't find a tree builder with the features you requested: xml. Do you need to install a parser library?\n", "type": "stream"}], "id": "jeIU", "outputs": [{"data": {"text/plain": ""}, "type": "data"}]}], "metadata": {"marimo_version": "0.14.17"}, "version": "1"},
+            "runtimeConfig": null,
+        };
+    </script>
+  
+<marimo-code hidden="">
+    import%20marimo%0A%0A__generated_with%20%3D%20%220.14.17%22%0Aapp%20%3D%20marimo.App(width%3D%22full%22)%0A%0A%0A%40app.cell%0Adef%20_()%3A%0A%20%20%20%20return%0A%0A%0A%40app.cell%0Adef%20_()%3A%0A%20%20%20%20import%20requests%0A%20%20%20%20from%20bs4%20import%20BeautifulSoup%0A%20%20%20%20import%20json%0A%20%20%20%20from%20datetime%20import%20datetime%0A%0A%20%20%20%20class%20GoogleNewsScraper%3A%0A%20%20%20%20%20%20%20%20def%20__init__(self)%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20self.base_url%20%3D%20%22https%3A%2F%2Fnews.google.com%2Frss%22%0A%20%20%20%20%20%20%20%20%20%20%20%20self.headers%20%3D%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20'User-Agent'%3A%20'Mozilla%2F5.0%20(Windows%20NT%2010.0%3B%20Win64%3B%20x64)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F91.0.4472.124%20Safari%2F537.36'%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20def%20get_news(self%2C%20country%3D'JP'%2C%20language%3D'ja'%2C%20max_results%3D10)%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B9%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Aparam%20country%3A%20%E5%9B%BD%E3%82%B3%E3%83%BC%E3%83%89%EF%BC%88%E4%BE%8B%EF%BC%9AJP%EF%BC%89%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Aparam%20language%3A%20%E8%A8%80%E8%AA%9E%E3%82%B3%E3%83%BC%E3%83%89%EF%BC%88%E4%BE%8B%EF%BC%9Aja%EF%BC%89%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Aparam%20max_results%3A%20%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B9%E6%95%B0%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Areturn%3A%20%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B9%E8%A8%98%E4%BA%8B%E3%81%AE%E3%83%AA%E3%82%B9%E3%83%88%0A%20%20%20%20%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20%20%20%20%20url%20%3D%20f%22%7Bself.base_url%7D%3Fhl%3D%7Blanguage%7D%26gl%3D%7Bcountry%7D%26ceid%3D%7Bcountry%7D%3A%7Blanguage%7D%22%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20try%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20response%20%3D%20requests.get(url%2C%20headers%3Dself.headers)%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20response.raise_for_status()%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20soup%20%3D%20BeautifulSoup(response.content%2C%20'xml')%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20items%20%3D%20soup.find_all('item'%2C%20limit%3Dmax_results)%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20news_list%20%3D%20%5B%5D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20for%20item%20in%20items%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20news%20%3D%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20'title'%3A%20item.title.text%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20'link'%3A%20item.link.text%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20'published_date'%3A%20item.pubDate.text%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20'source'%3A%20item.source.text%20if%20item.source%20else%20None%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20'description'%3A%20item.description.text%20if%20item.description%20else%20None%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20news_list.append(news)%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20return%20news_list%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20except%20Exception%20as%20e%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20print(f%22%E3%82%A8%E3%83%A9%E3%83%BC%E3%81%8C%E7%99%BA%E7%94%9F%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%3A%20%7Bstr(e)%7D%22)%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20return%20%5B%5D%0A%0A%20%20%20%20def%20save_news_to_file(news_list%2C%20filename)%3A%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B9%E3%82%92JSON%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AB%E4%BF%9D%E5%AD%98%E3%81%99%E3%82%8B%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20%20%20%20%20with%20open(filename%2C%20'w'%2C%20encoding%3D'utf-8')%20as%20f%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20json.dump(news_list%2C%20f%2C%20ensure_ascii%3DFalse%2C%20indent%3D2)%0A%0A%20%20%20%20if%20__name__%20%3D%3D%20%22__main__%22%3A%0A%20%20%20%20%20%20%20%20scraper%20%3D%20GoogleNewsScraper()%0A%0A%20%20%20%20%20%20%20%20%23%20%E6%97%A5%E6%9C%AC%E3%81%AE%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B9%E3%82%92%E5%8F%96%E5%BE%97%0A%20%20%20%20%20%20%20%20news%20%3D%20scraper.get_news(country%3D'JP'%2C%20language%3D'ja'%2C%20max_results%3D10)%0A%0A%20%20%20%20%20%20%20%20%23%20%E7%B5%90%E6%9E%9C%E3%82%92%E8%A1%A8%E7%A4%BA%0A%20%20%20%20%20%20%20%20for%20i%2C%20article%20in%20enumerate(news%2C%201)%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20print(f%22%5Cn%E8%A8%98%E4%BA%8B%20%7Bi%7D%3A%22)%0A%20%20%20%20%20%20%20%20%20%20%20%20print(f%22%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB%3A%20%7Barticle%5B'title'%5D%7D%22)%0A%20%20%20%20%20%20%20%20%20%20%20%20print(f%22%E3%83%AA%E3%83%B3%E3%82%AF%3A%20%7Barticle%5B'link'%5D%7D%22)%0A%20%20%20%20%20%20%20%20%20%20%20%20print(f%22%E5%85%AC%E9%96%8B%E6%97%A5%3A%20%7Barticle%5B'published_date'%5D%7D%22)%0A%20%20%20%20%20%20%20%20%20%20%20%20print(f%22%E3%82%BD%E3%83%BC%E3%82%B9%3A%20%7Barticle%5B'source'%5D%7D%22)%0A%0A%20%20%20%20%20%20%20%20%23%20%E7%B5%90%E6%9E%9C%E3%82%92JSON%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AB%E4%BF%9D%E5%AD%98%0A%20%20%20%20%20%20%20%20current_time%20%3D%20datetime.now().strftime(%22%25Y%25m%25d_%25H%25M%25S%22)%0A%20%20%20%20%20%20%20%20save_news_to_file(news%2C%20f'news_%7Bcurrent_time%7D.json')%20%0A%20%20%20%20return%0A%0A%0Aif%20__name__%20%3D%3D%20%22__main__%22%3A%0A%20%20%20%20app.run()%0A
+</marimo-code>
+
+<marimo-code-hash hidden="">1b578807ab14718aeda55316e9a4ad3dd9334c54fae8fdef1b2d29e1af017017</marimo-code-hash>
+</body>
+</html>
