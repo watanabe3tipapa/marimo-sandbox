@@ -724,8 +724,12 @@ dependencies = [
     { name = "openai" },
     { name = "pandas" },
     { name = "python-dotenv" },
-    { name = "ruff" },
     { name = "scikit-learn" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "ruff" },
 ]
 
 [package.metadata]
@@ -741,9 +745,11 @@ requires-dist = [
     { name = "openai", specifier = ">=1.99.9" },
     { name = "pandas", specifier = ">=2.3.1" },
     { name = "python-dotenv", specifier = ">=1.1.1" },
-    { name = "ruff", specifier = ">=0.12.11" },
     { name = "scikit-learn", specifier = ">=1.7.1" },
 ]
+
+[package.metadata.requires-dev]
+dev = [{ name = "ruff", specifier = ">=0.12.11" }]
 
 [[package]]
 name = "markdown"
